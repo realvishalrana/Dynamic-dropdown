@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <title>Dynamically Adding Elements</title>
+  </head>
+  <body>
+    <div class="card">
+      <h1>Dynamically adding elements</h1>
+      <div class="inputRecord">
+        <form id="dynamicForm" autocomplete="off" novalidate>
+          <div class="inputFieldContainer">
+            <input
+              type="text"
+              name="uniqueId"
+              id="uniqueId"
+              placeholder="Unique Id"
+            />
+            <div
+              id="emptyError"
+              style="
+                color: red;
+                opacity: 0;
+                margin: 2px 0px;
+                display: block;
+                height: 20px;
+              "
+            >
+              Enter the id
+            </div>
+          </div>
+          <div class="inputFieldContainer">
+            <select form="dynamicForm" name="inputType" id="inputType">
+              <option value="text">Text</option>
+              <option value="date">Date</option>
+              <option value="datetime-local">Datetime</option>
+              <option value="number">Number</option>
+              <option value="color">Color</option>
+              <option value="range">Range</option>
+              <option value="email">E-mail</option>
+              <option value="submit">Submit</option>
+            </select>
+          </div>
+          <div class="inputFieldContainer">
+            <input type="button" value="Add" id="add" />
+          </div>
+          <div class="inputFieldContainer">
+            <input
+              type="button"
+              value="Refresh"
+              id="refreshBtn"
+              onclick="refresh()"
+            />
+          </div>
+        </form>
+      </div>
+      <div id="dataRecordContainer"></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
